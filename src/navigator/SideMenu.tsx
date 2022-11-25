@@ -1,5 +1,11 @@
 import React from 'react';
-import { Image, useWindowDimensions, View } from 'react-native';
+import {
+  Image,
+  useWindowDimensions,
+  View,
+  TouchableOpacity,
+  Text,
+} from 'react-native';
 import {
   createDrawerNavigator,
   DrawerContentComponentProps,
@@ -25,7 +31,7 @@ export const SideMenu = () => {
   );
 };
 
-const MenuContent = (props: DrawerContentComponentProps) => {
+const MenuContent = ({ navigation }: DrawerContentComponentProps) => {
   return (
     <DrawerContentScrollView>
       <View style={styles.avatarContainer}>
@@ -35,6 +41,18 @@ const MenuContent = (props: DrawerContentComponentProps) => {
           }}
           style={styles.avatar}
         />
+      </View>
+      <View style={styles.menuContainer}>
+        <TouchableOpacity
+          onPress={() => navigation.navigate('StackNavigator')}
+          style={styles.menuButton}>
+          <Text style={styles.menuItem}>Navigation</Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          onPress={() => navigation.navigate('Settings')}
+          style={styles.menuButton}>
+          <Text style={styles.menuItem}>Settings</Text>
+        </TouchableOpacity>
       </View>
     </DrawerContentScrollView>
   );
