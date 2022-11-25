@@ -9,10 +9,10 @@ interface Props extends StackScreenProps<any, any> {}
 export const Page1Screen = ({ navigation }: Props) => {
   return (
     <View style={styles.globalMargin}>
-      <Text>Page 1 Screen</Text>
+      <Text style={styles.title}>Page 1 Screen</Text>
       <Button
         title="Go to Page 2"
-        onPress={() => navigation.navigate('Page 2')}
+        onPress={() => navigation.navigate('Page2')}
       />
     </View>
   );
