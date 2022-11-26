@@ -1,8 +1,8 @@
 /* eslint-disable react-native/no-inline-styles */
-import * as React from 'react';
-import { Text } from 'react-native';
+import React from 'react';
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
+import Icon from 'react-native-vector-icons/Ionicons';
 
 import { ChatScreen } from '../screens/ChatScreen';
 import { AlbumsScreen } from '../screens/AlbumsScreen';
@@ -30,16 +30,16 @@ export const TopTabNavigator = () => {
           let iconName: string = '';
           switch (route.name) {
             case 'ChatScreen':
-              iconName = 'C1';
+              iconName = 'chatbox-ellipses-outline';
               break;
             case 'ContactsScreen':
-              iconName = 'C2';
+              iconName = 'people-outline';
               break;
             case 'AlbumsScreen':
-              iconName = 'C3';
+              iconName = 'albums-outline';
               break;
           }
-          return <Text style={{ color }}>{iconName}</Text>;
+          return <Icon name={iconName} size={20} color={color} />;
         },
       })}>
       <Tab.Screen

@@ -1,7 +1,9 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable react-native/no-inline-styles */
 import React from 'react';
 import { Button, Text, TouchableOpacity, View } from 'react-native';
 import { StackScreenProps } from '@react-navigation/stack';
+import Icon from 'react-native-vector-icons/Ionicons';
 
 import { styles } from '../theme/appTheme';
 
@@ -22,6 +24,7 @@ export const Page1Screen = ({ navigation }: Props) => {
           onPress={() =>
             navigation.navigate('User', { id: 1, name: 'Pablo Misael Peloc' })
           }>
+          <Icon name="body-outline" size={35} color="white" />
           <Text style={styles.bigButtonText}>Misael</Text>
         </TouchableOpacity>
         <TouchableOpacity
@@ -29,6 +32,7 @@ export const Page1Screen = ({ navigation }: Props) => {
           onPress={() =>
             navigation.navigate('User', { id: 2, name: 'Maria Antonieta' })
           }>
+          <Icon name="woman-outline" size={35} color="white" />
           <Text style={styles.bigButtonText}>María</Text>
         </TouchableOpacity>
       </View>
