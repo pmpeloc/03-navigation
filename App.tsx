@@ -3,13 +3,20 @@ import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 
 import { SideMenu } from './src/navigator/SideMenu';
+import { AuthProvider } from './src/context/AuthContext';
 
 const App = () => {
   return (
     <NavigationContainer>
-      <SideMenu />
+      <AppState>
+        <SideMenu />
+      </AppState>
     </NavigationContainer>
   );
+};
+
+const AppState = ({ children }: { children: JSX.Element | JSX.Element[] }) => {
+  return <AuthProvider>{children}</AuthProvider>;
 };
 
 export default App;
