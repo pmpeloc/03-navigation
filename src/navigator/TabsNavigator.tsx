@@ -5,9 +5,9 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
 
 import { Tab1Screen } from '../screens/Tab1Screen';
-import { Tab2Screen } from '../screens/Tab2Screen';
 import { StackNavigator } from './StackNavigator';
 import { colors } from '../theme/appTheme';
+import { TopTabNavigator } from './TopTabNavigator';
 
 export const Tabs = () => {
   return Platform.OS === 'ios' ? <TabsIOS /> : <TabsAndroid />;
@@ -42,7 +42,7 @@ const TabsAndroid = () => {
       />
       <BottomTabAndroid.Screen
         name="Tab2Screen"
-        component={Tab2Screen}
+        component={TopTabNavigator}
         options={{ title: 'Tab 2' }}
       />
       <BottomTabAndroid.Screen
@@ -87,7 +87,7 @@ const TabsIOS = () => {
       />
       <BottomTabIOS.Screen
         name="Tab2Screen"
-        component={Tab2Screen}
+        component={TopTabNavigator}
         options={{ tabBarLabel: 'Tab 2' }}
       />
       <BottomTabIOS.Screen
